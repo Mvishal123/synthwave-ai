@@ -1,18 +1,17 @@
-import React from 'react'
-import Button from './components/button'
-import ButtonGradient from './assets/svg/ButtonGradient'
-import Header from './components/header'
-
+import React from "react";
+import Button from "./components/button";
+import ButtonGradient from "./assets/svg/ButtonGradient";
+import Header from "./components/header";
 
 const App = () => {
   return (
     <>
-      <div className='pt-[5.45rem]'>
+      <div className="pt-[5.45rem]">
         <Header />
       </div>
-      <ButtonGradient/>
+      <ButtonGradient />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
