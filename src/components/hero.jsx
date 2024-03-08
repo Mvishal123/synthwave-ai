@@ -5,6 +5,9 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
+import Generating from "./generating";
+import Notification from "./notification";
+import CompanyLogos from "./company-logos";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -12,7 +15,7 @@ const Hero = () => {
   return (
     <Section
       className={`pt-[12rem] -mt-[5.25rem]`}
-      crosess      
+      crosess
       crossesOffset={"lg:translate-y-[5.35rem]"}
       customPaddings
       id="hero"
@@ -20,7 +23,7 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
           <h1 className="h1 mb-6">
-            Explore the Possibilities of AI Chatting with {""}
+            Explore the Possibilities of &nbsp;AI&nbsp;Chatting with {""}
             <span className="relative inline-block">
               Brainwave
               <img
@@ -53,6 +56,9 @@ const Hero = () => {
                   width={1024}
                 />
               </div>
+
+              <Generating className="absolute left-4 right-4 bottom-5 justify-center md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+
               <ScrollParallax isAbsolutelyPositioned zIndex={1}>
                 <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] bg-n-9/40 px-1 py-3 backdrop-blur border border-n-1/10 rounded-xl xl:flex justify-center items-center">
                   {Array(4)
@@ -62,10 +68,16 @@ const Hero = () => {
                     ))}
                 </ul>
               </ScrollParallax>
+              <ScrollParallax isAbsolutelyPositioned>
+                <Notification
+                  className="hidden absolute xl:flex md:top-[11rem] -right-[6.5rem]"
+                  title={"Code Notification"}
+                />
+              </ScrollParallax>
             </div>
             <Gradient />
           </div>
-          <div className="absolute -top-[60%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
+          <div className="absolute -top-[74%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <img
               src={heroBackground}
               alt="hero"
@@ -76,7 +88,9 @@ const Hero = () => {
           </div>
           <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
+        <CompanyLogos className={"hidden relative z-10 mt-20 lg:block"}/>
       </div>
+      <BottomLine />
     </Section>
   );
 };
