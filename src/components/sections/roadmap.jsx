@@ -4,11 +4,13 @@ import Heading from "../heading";
 import { roadmap } from "../../constants";
 import { check2, grid, loading1 } from "../../assets";
 import Tagline from "../tagline";
+import { Gradient } from "../design/Services";
+import Button from "../button";
 
 const Roadmap = () => {
   return (
-    <Section className="overflow-hidden" id="roadmap">
-      <div className="container">
+    <Section className="relative overflow-hidden " id="roadmap">
+      <div className="container mb-20">
         <div className="">
           <div className="flex flex-col items-center mb-8 md:mb-12">
             <Heading
@@ -61,6 +63,10 @@ const Roadmap = () => {
               );
             })}
           </div>
+          <Gradient className="-translate-y-[0rem] -translate-x-[15rem] z-2 scale-[50%]" />
+        </div>
+        <div className="mt-40 flex justify-center">
+          <Button> Our roadmap</Button>
         </div>
       </div>
     </Section>
